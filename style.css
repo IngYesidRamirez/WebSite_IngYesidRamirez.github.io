@@ -2,13 +2,13 @@
     /* Paleta de Colores Tech Corporate */
     --bg-main: #0F172A;
     --bg-card: #1E293B;
+    --bg-alt: #172033;
     --primary: #38BDF8;
     --secondary: #6366F1;
     --text-title: #F8FAFC;
     --text-body: #94A3B8;
     --border-color: #334155;
     
-    /* Tipografías */
     --font-main: 'Inter', sans-serif;
     --font-code: 'Fira Code', monospace;
 }
@@ -31,8 +31,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
-    background-color: rgba(15, 23, 42, 0.9);
+    padding: 1.2rem 8%;
+    background-color: rgba(15, 23, 42, 0.95);
     position: sticky;
     top: 0;
     backdrop-filter: blur(10px);
@@ -44,19 +44,20 @@ body {
     font-family: var(--font-code);
     color: var(--primary);
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.8rem;
     align-items: center;
 }
 
 .nav-links a {
     color: var(--text-title);
     text-decoration: none;
+    font-size: 0.95rem;
     transition: color 0.3s;
 }
 
@@ -66,41 +67,40 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 6rem 8% 4rem;
     text-align: center;
-    padding: 0 10%;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
 }
 
 .badge {
     background: rgba(56, 189, 248, 0.1);
     color: var(--primary);
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 20px;
     font-size: 0.85rem;
     border: 1px solid rgba(56, 189, 248, 0.3);
     font-family: var(--font-code);
+    display: inline-block;
+    margin-bottom: 1rem;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     color: var(--text-title);
-    margin: 1.5rem 0 1rem;
+    margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
+    font-size: 1.15rem;
+    max-width: 750px;
     margin: 0 auto 2rem;
 }
 
 /* Botones */
 .btn-primary {
     background: var(--primary);
-    color: #000;
+    color: #0F172A;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
@@ -128,51 +128,203 @@ body {
     background: var(--bg-card);
 }
 
-/* Tarjetas */
+/* Sección Sobre Mí (Con Foto) */
 .section {
-    padding: 5rem 10%;
+    padding: 5rem 8%;
 }
 
-.section h2 {
-    color: var(--text-title);
-    font-size: 2rem;
-    margin-bottom: 2rem;
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-img-wrapper {
     text-align: center;
 }
 
-.cards-grid {
+.about-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 16px;
+    border: 3px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.2);
+    object-fit: cover;
+}
+
+.about-text h2 {
+    color: var(--text-title);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-p {
+    font-size: 1.1rem;
+    color: var(--text-title);
+    margin-bottom: 1rem;
+}
+
+.skills-summary {
+    margin-top: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.8rem;
+}
+
+.skill-item {
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+/* Secciones Generales */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.section-header h2 {
+    color: var(--text-title);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Herramientas & Metodologías */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
 }
 
-.card {
+.tool-card {
     background: var(--bg-card);
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s, border-color 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
-}
-
-.card .icon {
+.tool-icon {
     font-size: 2rem;
     color: var(--primary);
     margin-bottom: 1rem;
 }
 
-.card h3 {
+.tool-card h3 {
     color: var(--text-title);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.tool-card ul {
+    list-style: none;
+}
+
+.tool-card li {
+    margin-bottom: 0.6rem;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.4rem;
+}
+
+/* Nichos de Mercado */
+.niche-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.niche-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.niche-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.niche-header {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.niche-header i {
+    font-size: 1.5rem;
+    color: var(--secondary);
+}
+
+.niche-header h3 {
+    color: var(--text-title);
+    font-size: 1.1rem;
+}
+
+.niche-content {
+    padding: 1.5rem;
+}
+
+.niche-content h4 {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.niche-content .role {
+    font-size: 0.85rem;
+    color: var(--text-body);
+    font-family: var(--font-code);
+    margin-bottom: 1rem;
+}
+
+.niche-content ul {
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+}
+
+.niche-content li {
     margin-bottom: 0.5rem;
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
+    background: #090D16;
     border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
+    color: var(--text-title);
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+footer .copy {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-body);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .nav-links {
+        display: none; /* Se puede agregar menú hamburguesa si se desea */
+    }
 }
